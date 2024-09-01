@@ -1,0 +1,9 @@
+body{
+    height: 100vh;
+}
+
+@import "./components/sidemenu.scss";
+@import "./components/header.scss";
+@import "./components/modaleform.scss";
+@import "./components/carte.scss";
+@import "./pages/home.scss";

@@ -1,5 +1,5 @@
-import React from "react";
-// import "./styles/app.scss";
+import React, { useState } from 'react';
+import "./styles/app.scss";
 import { Routes, Route, Navigate, HashRouter } from "react-router-dom";
 import Home from './pages/home/Home'
 

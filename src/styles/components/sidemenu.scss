@@ -1,0 +1,37 @@
+.sidemenu{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 300px;
+   div{
+    display: flex;
+    cursor: pointer;
+    border-radius: 18px;
+    padding: 10px;
+    gap: 10px;
+    p{
+        font-size: 18px;
+        font-weight: 600;
+        color: #888888;
+        margin: 0px;
+    }
+
+    img{
+        opacity: 0.4;
+    }
+   
+   
+
+    &.active{
+        background-color: #e4e4e4;
+        p{
+            color: #000;
+        }
+
+        img{
+            opacity: 1;
+        }
+    }
+   }
+}

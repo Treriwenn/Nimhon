@@ -1,0 +1,12 @@
+.home{
+
+    .mainSection{
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        .main-content{
+            width: 100%;
+        }
+    }
+}

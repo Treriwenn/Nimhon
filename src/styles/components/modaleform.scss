@@ -1,0 +1,18 @@
+.modale__new__logement{
+    z-index: 10;
+    position: absolute;
+    display: flex;
+    right: 0px;
+    background-color: white;
+    box-shadow: 5px 0px 20px 4px black;
+    height: 100%;
+    top: 0px;
+    padding: 0px 20px;
+    // border-radius: 20px 0px 0px 20px;
+    flex-direction: column;
+    &__arrow{
+        width: 20px;
+        height: auto;
+        padding-top: 20px;
+    }
+}

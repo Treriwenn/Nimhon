@@ -1,20 +1,49 @@
-import React from "react";
-// import Banner from "../../components/banner/Banner";
-// import Footer from "../../components/footer/Footer";
-// import Gallery from "../../components/gallery/Gallery";
-// import Header from "../../components/header/Header";
-// import imgHomeBanner from "../../assets/images/banner/homeBanner.png";
+import React, { useState } from 'react';
 
-const Home = () => {
+import Sidemenu from "../../components/sidemenu/Sidemenu";
+import Carte from "../../components/carte/Carte";
+import About from "../../components/about/About";
+import Header from '../../components/header/Header';
+import Modaleform from '../../components/addlogement/Modaleform';
+import Addlogement from '../../components/addlogement/Addlogement';
+import Propertylist from '../../components/propertylist/Propertylist';
+
+function Home() {
+  const [activeComponent, setActiveComponent] = useState('home'); // État pour le composant actif
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const viewModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
+  const renderContent = () => {
+    switch (activeComponent) {
+      case 'carte':
+        return <Carte />; // Rendre le composant Carte
+      case 'about':
+        return <About />; // Rendre le composant About si nécessaire
+      default:
+        return <div><h1>Bienvenue sur la page d'accueil!</h1>
+        <Propertylist /></div>; // Contenu par défaut
+    }
+  };
+
   return (
+
     <div className="home">
-      {/* <Header /> */}
-      <main>
-        {/* <Gallery /> */}
-      </main>
-      {/* <Footer /> */}
+      <Header />
+      <div className='mainSection'>
+        <Sidemenu setActiveComponent={setActiveComponent} activeComponent={activeComponent} /> {/* Passer setActiveComponent à Sidebar */}
+        <div className="main-content">
+          {renderContent()} {/* Rendre le contenu basé sur l'état */}
+        </div>
+        <Addlogement isModalOpen={isModalOpen} viewModal={viewModal} />
+        <div>
+          {isModalOpen && <Modaleform onClose={viewModal} isModalOpen={isModalOpen} viewModal={viewModal} />}
+        </div>
+      </div>
     </div>
   );
-};
+}
 
 export default Home;
